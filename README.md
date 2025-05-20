@@ -1,3 +1,4 @@
+# CryptoParser
 ## [ENG](https://github.com/Q-Vortex/CryptoParser/edit/main/README.md#eng) or [RU](https://github.com/Q-Vortex/CryptoParser/edit/main/README.md#ru)
 
 ## RU

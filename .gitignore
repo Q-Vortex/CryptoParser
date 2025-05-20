@@ -1,0 +1,13 @@
+# Python virtual environment
+venv/
+
+# Compiled Python files
+__pycache__/
+
+# User configuration and runtime data
+config.json
+data.json
+
+# OS/package-specific files
+*.deb
+
