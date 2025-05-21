@@ -1,6 +1,4 @@
 # CryptoParser
-## [ENG](https://github.com/Q-Vortex/CryptoParser/edit/main/README.md#eng) or [RU](https://github.com/Q-Vortex/CryptoParser/edit/main/README.md#ru)
-
 ## RU
 Привет, эта прога предназначена для того чтобы "тырить" с сайта [TradingView](https://www.tradingview.com) инфу о крипте. 
 Эту программу я использовал для своего проекта, ну а если тебе надо, забирай, мне почти не жалко😊  
