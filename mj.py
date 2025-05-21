@@ -14,6 +14,8 @@ def add_to_dict(date, time, value, name):
             except json.JSONDecodeError:
                 pass
     else:
+        with open('data.json', 'w') as f:
+            pass
         root = {}
 
     if date not in root:

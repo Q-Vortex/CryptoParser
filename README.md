@@ -55,18 +55,22 @@ TradingView требуют уже зарегистрированного пол�
 
 1. Зайди на сайт [TradingView](https://www.tradingview.com).
 2. Нажми на **F12** или **Ctrl+Shift+I** ну или **правая кнопка мыши и в низу будет "Просмотреть код элемента"**, для того чтобы открыть инструменты разработчика.
-3. Найди в верхней панели "Console".
-4. Пропиши команду для получения куки.
+3. Найди в верхней панели "Network".
+4. Найди "Name": *https://www.tradingview.com/* или код твоего скрина (он будет в конце url).
+
+5. Найди раздел **Сookie:**.
+6. Скопируй текст
+7. Запусти программу
+8. Вставь куку в месте с другими параметрами
+
+Это всё сохранится в **config.json** так что если нужно будет ты найдёшь их легко.
+
+### Есть вариант но с касолью
+Но он может не работать
 
 ```js
 document.cookie
 ```
-
-5. Скопируй то что тебе выдала консоль.
-6. Запусти программу
-7. Вставь куку в месте с другими параметрами
-
-Это всё сохранится в **config.json** так что если нужно будет ты найдёшь их легко.
 
 Удачного использования😉😁!
 
@@ -123,18 +127,24 @@ Or just run the program — it’ll help you set everything up interactively.
 ## ⚠️ Note
 TradingView requires a logged-in user to access screens, so before using the program, you need to get your cookie containing login info. 
 
-1. Go to [TradingView](https://www.tradingview.com)  
-2. Press **F12**, or **Ctrl+Shift+I**, or right-click and choose **"Inspect"** to open dev tools  
-3. Go to the **Console** tab  
-4. Run this command:
+1. Go to the [TradingView](https://www.tradingview.com) website.
+2. Press **F12**, or **Ctrl+Shift+I**, or **right-click and select "Inspect" at the bottom** to open Developer Tools.
+3. In the top panel, find "Network".
+4. Look for "Name": *https://www.tradingview.com/* or the code of your screenshot (it will be at the end of the URL).
+
+5. Locate the **Cookie:** section.
+6. Copy the text.
+7. Launch the program.
+8. Paste the cookie along with other parameters.
+
+Everything will be saved in **config.json**, so you'll be able to find them easily if needed.
+
+### There is another way using the console
+But it might not work:
 
 ```js
 document.cookie
 ```
-
-5. Copy the output  
-6. Launch the program  
-7. Paste the cookie along with the other config values
 
 Everything will be saved to **config.json**, so you can easily find or change it later.
 

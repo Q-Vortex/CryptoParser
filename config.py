@@ -14,7 +14,8 @@ def load_config():
         "URL": url,
         "COOKIE": cookie,
         "DELAY_MIN": delay,
-        "VISUALIZE": visualize
+        "VISUALIZE": visualize,
+        "FILTER": []
     }
 
     with open("config.json", "w", encoding="utf-8") as f:

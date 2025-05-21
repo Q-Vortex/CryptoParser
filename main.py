@@ -27,7 +27,6 @@ for part in cookie_str.split('; '):
             'domain': 'tradingview.com'
         })
 
-
 options = Options()
 options.add_argument('--headless=new')
 options.add_argument('--no-sandbox')
@@ -43,7 +42,7 @@ for cookie in cookies:
     try:
         driver.add_cookie(cookie)
     except Exception as e:
-        print(f"Ошибка добавления cookie {cookie['name']}: {e}")
+        print(f"Cookie error adding {cookie['name']}: {e}")
 
 driver.get(config["URL"])
 
@@ -60,20 +59,23 @@ def infomake(info):
             del info[i]
         else:
             i += 1
+    
+    ItemFilter = config["FILTER"]
+
+    for i in range(len(info) - 1):
+        if info[i] in ItemFilter:
+            del info[i]
 
     del info[1]
 
+    if config["VISUALIZE"] == "true":
+        print(f"ADD: {info}\nTIME: {jdate} {jtime}")
+
     return info
-    # if config["VISUALIZE"] == "true":
-    #     print(f"ADD: {tag} {item}\nTIME: {jdate} {jtime}")
-
-
 
 try:
     while True:
         os.system('clear')
-            
-        
 
         jdate = datetime.datetime.now().strftime("%d.%m.%Y")
         jtime = datetime.datetime.now().strftime("%H:%M:%S")
@@ -83,11 +85,12 @@ try:
     
         head = driver.find_elements(By.CSS_SELECTOR, "tr.row-RdUXZpkv > th.cell-UhKtUaZw.cell-UhKtUaZw.cell-hdxjpvoX:not(:nth-child(1))")
         info = driver.find_elements(By.CSS_SELECTOR, "tr.row-RdUXZpkv.listRow")
-
+        
         heads = []
+        
         for h in head:
             heads.append(h.text.replace("\n", " "))
-
+              
         for inf in info:
             items = infomake(inf.text.replace("\n", " ").split(" "))
 
@@ -95,7 +98,7 @@ try:
 
         time.sleep(int(config["DELAY_MIN"]) * 60)
 except Exception as e:
-    print("Ошибка при поиске элементов:", e)
+    print("Find element error:", e)
 
 finally:
     driver.quit()
